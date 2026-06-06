@@ -19,7 +19,7 @@ export default function PremioHero({ autoPlay = false }: Props) {
   const heroRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    gsap.set([".nav-shell", ".countdown-hover-field", ".copy-line-wrap", ".hero-cta", ".premio-logo-svg"], {
+    gsap.set([".countdown-hover-field", ".copy-line-wrap", ".hero-cta", ".premio-logo-svg"], {
       autoAlpha: 0,
     });
   }, []);
@@ -29,11 +29,6 @@ export default function PremioHero({ autoPlay = false }: Props) {
 
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-
-      tl.fromTo(".nav-shell",
-        { y: -60, autoAlpha: 0 },
-        { y: 0, autoAlpha: 1, duration: 0.7 },
-      );
 
       tl.fromTo(".countdown-hover-field",
         { scale: 0.55, autoAlpha: 0 },
@@ -254,21 +249,6 @@ export default function PremioHero({ autoPlay = false }: Props) {
   return (
     <main className="premio-page" ref={heroRef}>
       <section className="premio-hero" aria-labelledby="premio-title">
-
-        <nav className="nav-shell" aria-label="Navegación principal">
-          <a className="nav-mark" href="#" aria-label="Natura500">
-            <img src="/assets/navbar-logo.svg" alt="" />
-          </a>
-          <div className="nav-links">
-            <a href="#">Explorar</a>
-            <a href="#">Oportunidades</a>
-            <a className="active" href="#">
-              <img src="/assets/nav-premio-icon.svg" alt="" />
-              Premio
-            </a>
-            <a href="#">Regístrate</a>
-          </div>
-        </nav>
 
         <div className="hero-center">
           <h1 id="premio-title" className="sr-only">Premio Natura500</h1>
