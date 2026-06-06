@@ -1,0 +1,8 @@
+node_modules
+.next
+out
+.vercel
+*.log
+premio-hero-*.png
+.env*
+!.env.example
